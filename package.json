@@ -25,18 +25,35 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "@semantic-release/git": "^7.0.1",
     "@types/qunit": "^2.0.31",
     "ember-cli": "^3.1.4",
     "libkit": "^0.6.0",
     "qunit": "^2.4.1",
+    "semantic-release": "^15.9.1",
     "shelljs": "^0.7.8",
-    "tslint": "^5.7.0",
-    "typescript": "^3.1.0-dev.20180728",
     "travis-deploy-once": "^5.0.1",
-    "semantic-release": "^15.9.1"
+    "tslint": "^5.7.0",
+    "typescript": "^3.1.0-dev.20180728"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/mike-north/types.git"
+  },
+  "plublishConfig": {
+    "access": "public",
+    "tag": "next"
+  },
+  "release": {
+    "prepare": [
+      "@semantic-release/npm",
+      {
+        "path": "@semantic-release/git",
+        "assets": [
+          "package.json"
+        ],
+        "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+      }
+    ]
   }
 }
