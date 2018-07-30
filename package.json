@@ -45,6 +45,9 @@
     "tag": "next"
   },
   "release": {
+    "verifyConditions": [
+      "@semantic-release/github"
+    ],
     "prepare": [
       "@semantic-release/npm",
       {
@@ -54,6 +57,15 @@
         ],
         "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
       }
+    ],
+    "publish": [
+      "@semantic-release/github"
+    ],
+    "success": [
+      "@semantic-release/github"
+    ],
+    "fail": [
+      "@semantic-release/github"
     ]
   }
 }
