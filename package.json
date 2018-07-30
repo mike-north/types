@@ -1,6 +1,6 @@
 {
   "name": "@mike-north/types",
-  "version": "0.0.0",
+  "version": "0.0.0-development",
   "description": "TypeScript types/interfaces I often use for small libraries",
   "main": "dist/commonjs/src/index.js",
   "module": "dist/modules/src/index.js",
@@ -19,7 +19,9 @@
     "build-tests": "ember build",
     "pretest": "npm run problems",
     "test": "ember test",
-    "tdd": "ember test --server"
+    "tdd": "ember test --server",
+    "travis-deploy-once": "travis-deploy-once",
+    "semantic-release": "semantic-release"
   },
   "license": "MIT",
   "devDependencies": {
@@ -29,6 +31,12 @@
     "qunit": "^2.4.1",
     "shelljs": "^0.7.8",
     "tslint": "^5.7.0",
-    "typescript": "^3.1.0-dev.20180728"
+    "typescript": "^3.1.0-dev.20180728",
+    "travis-deploy-once": "^5.0.1",
+    "semantic-release": "^15.9.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mike-north/types.git"
   }
 }
