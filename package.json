@@ -1,6 +1,6 @@
 {
   "name": "@mike-north/types",
-  "version": "0.0.0-development",
+  "version": "1.0.2",
   "description": "TypeScript types/interfaces I often use for small libraries",
   "main": "dist/commonjs/src/index.js",
   "module": "dist/modules/src/index.js",
