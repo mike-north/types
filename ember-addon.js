@@ -3,7 +3,7 @@
 const path = require('path');
 
 module.exports = {
-  name: 'mike-north-types',
+  name: '@mike-north/types',
 
   setupPreprocessorRegistry(type, registry) {
     if (type === 'self') {

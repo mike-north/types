@@ -1,7 +1,7 @@
-import hello from 'mike-north-types';
+import * as MNT from '@mike-north/types';
 
 QUnit.module('mike-north-types tests');
 
 QUnit.test('hello', assert => {
-  assert.equal(hello(), 'Hello from mike-north-types');
+  assert.equal(MNT, 'Hello from mike-north-types');
 });
