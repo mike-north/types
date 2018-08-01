@@ -1,0 +1,39 @@
+import { Deferred } from '@mike-north/types';
+import { suite, test } from 'qunit-decorators';
+
+@suite('mike-north-types tests')
+export class DeferredTests {
+  @test 'Constructor does not error'(assert: Assert) {
+    let d = new Deferred<number>();
+    assert.ok(d, 'instance is defined');
+    assert.equal(typeof d.resolve, 'function', 'resolve property is a function');
+    assert.equal(typeof d.reject, 'function', 'reject property is a function');
+    assert.equal(typeof d.promise.then, 'function', 'promise property looks like a promise');
+  }
+  @test async 'promise resolves when Deferred#resolve() is called'(assert: Assert) {
+    assert.expect(2);
+    let d = new Deferred<number>();
+    setTimeout(() => {
+      d.resolve(42);
+      assert.ok(true);
+    }, 30);
+    const val = await d.promise;
+    assert.equal(val, 42, 'value is correct');
+  }
+  @test async 'promise rejects when Deferred#reject() is called'(assert: Assert) {
+    assert.expect(3);
+    let d = new Deferred<number>();
+    setTimeout(() => {
+      assert.ok(true);
+      d.reject(-42);
+    }, 30);
+    try {
+      await d.promise;
+      assert.ok(false); // should never reach this line
+    } catch (e) {
+      assert.equal(e, -42, 'value is correct');
+    } finally {
+      assert.ok(true);
+    }
+  }
+}
