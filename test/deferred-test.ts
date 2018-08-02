@@ -1,7 +1,7 @@
 import { Deferred } from '@mike-north/types';
 import { suite, test } from 'qunit-decorators';
 
-@suite('mike-north-types tests')
+@suite
 export class DeferredTests {
   @test 'Constructor does not error'(assert: Assert) {
     let d = new Deferred<number>();

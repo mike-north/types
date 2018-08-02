@@ -1,25 +1,31 @@
-import { ExtractPropertiesOfType } from './objects';
+import { ExtractPropertyNamesOfType } from './objects';
 
-export type FunctionArgs<F> = F extends (a: infer A) => any
-  ? [A]
-  : F extends (a: infer A, b: infer B) => any
-    ? [A, B]
-    : F extends (a: infer A, b: infer B, c: infer C) => any
-      ? [A, B, C]
-      : F extends (a: infer A, b: infer B, c: infer C, d: infer D) => any
-        ? [A, B, C, D]
-        : F extends (
-            a: infer A,
-            b: infer B,
-            c: infer C,
-            d: infer D,
-            e: infer E
-          ) => any
-          ? [A, B, C, D, E]
-          : never;
-
-// tslint:disable-next-line:ban-types
-export type AsyncMethodReturns<T, TT = ExtractPropertiesOfType<T, Function>> = {
+/**
+ * Given a type of object with methods, make some (or all) of the return values
+ * "async" (i.e., returning a @pre{string} becomes returning a @pre{Promise<string>}).
+ *
+ * All non-function properties are excluded from the resultant type
+ *
+ * @example
+ * ```ts
+ *
+ * interface User {
+ *   isAdmin: boolean; // will not be included
+ *   login(): boolean;
+ *   resetPassword(): string;
+ *   sendEmail(body: string): boolean;
+ * }
+ * const x: AsyncMethodReturns<User> ...; // {
+ *                                        // login(): Promise<boolean>,
+ *                                        // resetPassword(): Promise<string>
+ *                                        // }
+ * ```
+ *
+ */
+export type AsyncMethodReturns<
+  T,
+  TT = Pick<T, ExtractPropertyNamesOfType<T, (...args: any[]) => any>>
+> = {
   [K in keyof TT]: TT[K] extends () => infer R
     ? () => Promise<R>
     : TT[K] extends (a: infer A) => infer R
