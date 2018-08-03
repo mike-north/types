@@ -1,3 +1,10 @@
+## [1.0.6](https://github.com/mike-north/types/compare/v1.0.5...v1.0.6) (2018-08-03)
+
+
+### Bug Fixes
+
+* AsyncMethodReturns no longer wraps promise return types in additional promises ([68b8239](https://github.com/mike-north/types/commit/68b8239))
+
 ## [1.0.5](https://github.com/mike-north/types/compare/v1.0.4...v1.0.5) (2018-08-02)
 
 
