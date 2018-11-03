@@ -31,7 +31,7 @@
     "ember-cli": "3.3.0",
     "libkit": "0.7.0-beta.2",
     "qunit": "2.6.1",
-    "qunit-decorators": "1.1.1",
+    "qunit-decorators": "1.1.2",
     "semantic-release": "15.9.3",
     "shelljs": "0.7.8",
     "travis-deploy-once": "5.0.1",
