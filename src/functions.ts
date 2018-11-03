@@ -21,8 +21,9 @@
  *
  */
 export type AsyncMethodReturns<T, K extends keyof T = keyof T> = {
-  [KK in K]
-    : T[KK] extends (...args: any[]) => PromiseLike<any> ? T[KK]
-    : T[KK] extends (...args: infer A) => infer R ? (...args: A) => Promise<R>
-    : T[KK]
+  [KK in K]: T[KK] extends (...args: any[]) => PromiseLike<any>
+    ? T[KK]
+    : T[KK] extends (...args: infer A) => infer R
+      ? (...args: A) => Promise<R>
+      : T[KK]
 };
