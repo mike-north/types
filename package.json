@@ -29,7 +29,7 @@
     "@semantic-release/git": "7.0.1",
     "@types/qunit": "2.5.2",
     "broccoli-typescript-compiler": "^4.0.1",
-    "ember-cli": "3.3.0",
+    "ember-cli": "3.5.0",
     "libkit": "mike-north/libkit#ts-3",
     "qunit": "2.6.1",
     "qunit-decorators": "1.1.2",
