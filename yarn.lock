@@ -1585,7 +1585,7 @@ broccoli-tee@^1.0.2:
   dependencies:
     tree-sync "^1.2.2"
 
-broccoli-typescript-compiler@^4.0.0, broccoli-typescript-compiler@^4.0.1:
+broccoli-typescript-compiler@4.0.1, broccoli-typescript-compiler@^4.0.0:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/broccoli-typescript-compiler/-/broccoli-typescript-compiler-4.0.1.tgz#7a03e003b3032acf9a2feaae973ae2e257393d04"
   integrity sha512-3psnblHnaMTfh3sE9lkLTKs8XjK563vbKMh/1mslmabqt9wuAOfTMUNEMbmGCofVoMUd9C/ydrmN5eZ6mJUNpQ==
@@ -8389,7 +8389,7 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typescript@^3.1.6:
+typescript@3.1.6:
   version "3.1.6"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.1.6.tgz#b6543a83cfc8c2befb3f4c8fba6896f5b0c9be68"
   integrity sha512-tDMYfVtvpb96msS1lDX9MEdHrW4yOuZ4Kdc4Him9oU796XldPYF/t2+uKoX0BBa0hXXwDlqYQbXY5Rzjzc5hBA==

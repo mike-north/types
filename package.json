@@ -28,7 +28,7 @@
     "@semantic-release/changelog": "3.0.0",
     "@semantic-release/git": "7.0.1",
     "@types/qunit": "2.5.2",
-    "broccoli-typescript-compiler": "^4.0.1",
+    "broccoli-typescript-compiler": "4.0.1",
     "ember-cli": "3.5.0",
     "libkit": "mike-north/libkit#ts-3",
     "qunit": "2.6.1",
@@ -37,7 +37,7 @@
     "shelljs": "0.8.2",
     "travis-deploy-once": "5.0.1",
     "tslint": "5.11.0",
-    "typescript": "^3.1.6"
+    "typescript": "3.1.6"
   },
   "repository": {
     "type": "git",
