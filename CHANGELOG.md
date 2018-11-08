@@ -1,3 +1,10 @@
+## [1.0.7](https://github.com/mike-north/types/compare/v1.0.6...v1.0.7) (2018-11-04)
+
+
+### Bug Fixes
+
+* detect problems with TS3 instead of TS2 ([7250142](https://github.com/mike-north/types/commit/7250142))
+
 ## [1.0.6](https://github.com/mike-north/types/compare/v1.0.5...v1.0.6) (2018-08-03)
 
 
