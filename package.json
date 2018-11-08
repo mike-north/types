@@ -25,6 +25,9 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "@commitlint/cli": "7.2.1",
+    "@commitlint/config-conventional": "7.1.2",
+    "@commitlint/travis-cli": "7.2.1",
     "@semantic-release/changelog": "3.0.0",
     "@semantic-release/git": "7.0.1",
     "@types/qunit": "2.5.2",
@@ -47,35 +50,17 @@
     "access": "public",
     "tag": "next"
   },
-  "release": {
-    "verifyConditions": [
-      "@semantic-release/npm",
-      "@semantic-release/github"
-    ],
-    "prepare": [
-      "@semantic-release/npm",
-      {
-        "path": "@semantic-release/changelog",
-        "changelogFile": "CHANGELOG.md"
-      },
-      {
-        "path": "@semantic-release/git",
-        "assets": [
-          "package.json",
-          "CHANGELOG.md"
-        ],
-        "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
-      }
-    ],
-    "publish": [
-      "@semantic-release/npm",
-      "@semantic-release/github"
-    ],
-    "success": [
-      "@semantic-release/github"
-    ],
-    "fail": [
-      "@semantic-release/github"
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "./node_modules/.bin/commitlint -e $HUSKY_GIT_PARAMS"
+    }
+  },
+  "release": {
+    "extends": "@mike-north/js-lib-semantic-release-config"
   }
 }
