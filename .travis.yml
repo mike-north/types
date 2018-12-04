@@ -12,19 +12,31 @@ cache:
 notifications:
   email: false
 
-stages:
-  - 'Tests'
+node_js: 10
+
+install:
+  - yarn install --no-lockfile --non-interactive
+
+stages: 
+  - 'Test'
   - name: 'Deploy'
     if: branch = master AND type = push
 
 jobs:
   fail_fast: true
   include:
-    - stage: 'Tests'
-      node_js: 10
-    - node_js: 8
+    - stage: 'Test'
+      name: 'Fixed Dependencies'
+      script:
+        - commitlint-travis
+        - node ./scripts/problems.js
+        - yarn test
+      install: yarn install --non-interactive
+    - name: 'Floating Dependencies'
     - stage: 'Deploy'
-      node_js: 10
+      name: 'Publish to npm'
+      install:
+        - yarn install --non-interactive
       script: yarn semantic-release
 
 branches:
