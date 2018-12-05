@@ -17,15 +17,15 @@ node_js: 10
 install:
   - yarn install --no-lockfile --non-interactive
 
-stages: 
-  - 'Test'
+stages:
+  - 'Tests'
   - name: 'Deploy'
     if: branch = master AND type = push
 
 jobs:
   fail_fast: true
   include:
-    - stage: 'Test'
+    - stage: 'Tests'
       name: 'Fixed Dependencies'
       script:
         - commitlint-travis
