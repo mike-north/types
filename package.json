@@ -29,7 +29,7 @@
     "@commitlint/config-conventional": "7.1.2",
     "@commitlint/travis-cli": "7.2.1",
     "@semantic-release/changelog": "3.0.1",
-    "@semantic-release/git": "7.0.5",
+    "@semantic-release/git": "7.0.6",
     "@types/qunit": "2.5.3",
     "broccoli-typescript-compiler": "4.1.0",
     "ember-cli": "3.6.0",
