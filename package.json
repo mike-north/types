@@ -34,7 +34,7 @@
     "broccoli-typescript-compiler": "4.1.0",
     "ember-cli": "3.6.1",
     "libkit": "mike-north/libkit#ts-3",
-    "qunit": "2.8.0",
+    "qunit": "2.9.0",
     "qunit-decorators": "1.1.5",
     "semantic-release": "15.13.2",
     "shelljs": "0.8.3",
