@@ -7043,7 +7043,7 @@ minimalistic-crypto-utils@^1.0.0, minimalistic-crypto-utils@^1.0.1:
   resolved "https://registry.yarnpkg.com/minimalistic-crypto-utils/-/minimalistic-crypto-utils-1.0.1.tgz#f6c00c1c0b082246e5c4d99dfb8c7c083b2b582a"
   integrity sha1-9sAMHAsIIkblxNmd+4x8CDsrWCo=
 
-"minimatch@2 || 3", minimatch@^3.0.0, minimatch@^3.0.2, minimatch@^3.0.4:
+"minimatch@2 || 3", minimatch@3.0.4, minimatch@^3.0.0, minimatch@^3.0.2, minimatch@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-3.0.4.tgz#5166e286457f03306064be5497e8dbb0c3d32083"
   integrity sha512-yJHVQEhyqPLUTgt9B83PXu6W3rx4MvvHvSUvToogpwoGDOUQ+yDrR0HRot+yOCdCO7u4hX3pWft6kWBBcqh0UA==
@@ -7390,6 +7390,11 @@ node-releases@^1.0.1:
   integrity sha512-ZaZWMsbuDcetpHmYeKWPO6e63pSXLb50M7lJgCbcM2nC/nQC3daNifmtp5a2kp7EWwYfhuvH6zLPWkrF8IiDdw==
   dependencies:
     semver "^5.3.0"
+
+node-watch@0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/node-watch/-/node-watch-0.6.0.tgz#ab0703b60cd270783698e57a428faa0010ed8fd0"
+  integrity sha512-XAgTL05z75ptd7JSVejH1a2Dm1zmXYhuDr9l230Qk6Z7/7GPcnAs/UyJJ4ggsXSvWil8iOzwQLW0zuGUvHpG8g==
 
 "nopt@2 || 3", nopt@^3.0.6:
   version "3.0.6"
@@ -8436,7 +8441,18 @@ qunit-decorators@1.1.5:
   dependencies:
     qunit "^2.4.1"
 
-qunit@2.8.0, qunit@^2.4.1:
+qunit@2.9.0:
+  version "2.9.0"
+  resolved "https://registry.yarnpkg.com/qunit/-/qunit-2.9.0.tgz#f28e067b8fa3e0269c94bfb9d661cbd32d2a79cb"
+  integrity sha512-hmgKmFMaXKSRz8Y5qzaMmgCLi6pAjajnYsOD5rjZpQtXy021UFpj4v6tb6RFcTKeCV1g2irALhWFPwIPuwS65A==
+  dependencies:
+    commander "2.12.2"
+    js-reporters "1.2.1"
+    minimatch "3.0.4"
+    node-watch "0.6.0"
+    resolve "1.5.0"
+
+qunit@^2.4.1:
   version "2.8.0"
   resolved "https://registry.yarnpkg.com/qunit/-/qunit-2.8.0.tgz#007474727cdba323c35f9526e21c0687f8ea04b3"
   integrity sha512-bT7vvvE4Xvk6c/uSbvP11uZXlzPJINURQyG9zj5I0EXXycW9oeDCodvAOK3GuYZ+GoXiTAMsxVSXCPGeXlTWzg==
