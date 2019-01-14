@@ -2,17 +2,17 @@ language: node_js
 sudo: required
 dist: trusty
 addons:
-    chrome: stable
+  chrome: stable
 before_script:
-    - "sudo chown root /opt/google/chrome/chrome-sandbox"
-    - "sudo chmod 4755 /opt/google/chrome/chrome-sandbox"
+  - 'sudo chown root /opt/google/chrome/chrome-sandbox'
+  - 'sudo chmod 4755 /opt/google/chrome/chrome-sandbox'
 cache:
   yarn: true
 
 notifications:
   email: false
 
-stages: 
+stages:
   - 'Tests'
   - name: 'Deploy'
     if: branch = master AND type = push
@@ -22,9 +22,9 @@ jobs:
   include:
     - stage: 'Tests'
       node_js: 10
-      node_js: 8
+    - node_js: 8
     - stage: 'Deploy'
-      script: yarn semantic-release 
+      script: yarn semantic-release
 
 branches:
   except:
