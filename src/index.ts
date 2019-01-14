@@ -1,4 +1,9 @@
-export * from './objects';
-export * from './async';
-export * from './functions';
-export * from './classes';
+export {
+  Dict,
+  ExtractPropertyNamesOfType,
+  OptionalProps,
+  RequiredProps
+} from './objects';
+export { Deferred } from './async';
+export { AsyncMethodReturns } from './functions';
+export { ConstructorArgs } from './classes';
