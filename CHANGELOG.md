@@ -1,3 +1,17 @@
+# [1.1.0](https://github.com/mike-north/types/compare/v1.0.7...v1.1.0) (2019-01-14)
+
+
+### Bug Fixes
+
+* explicit re-exports ([445680f](https://github.com/mike-north/types/commit/445680f))
+* release automation modernization ([c232afc](https://github.com/mike-north/types/commit/c232afc))
+* shared semantic-release and renovate config ([e2f1163](https://github.com/mike-north/types/commit/e2f1163))
+
+
+### Features
+
+* add Dict<T> ([62bdda3](https://github.com/mike-north/types/commit/62bdda3))
+
 ## [1.0.7](https://github.com/mike-north/types/compare/v1.0.6...v1.0.7) (2018-11-04)
 
 
