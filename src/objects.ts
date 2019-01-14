@@ -38,7 +38,8 @@ export type RequiredProps<T, K extends keyof T> = T & { [L in K]-?: T[K] };
  * };
  * ```
  */
-export type OptionalProps<T, K extends keyof T> = { [L in K]?: T[L] } & { [M in Exclude<keyof T, K>]: T[M] };
+export type OptionalProps<T, K extends keyof T> = { [L in K]?: T[L] } &
+  { [M in Exclude<keyof T, K>]: T[M] };
 
 /**
  * Given an object type T, return a type of property names whose values are assignable to type S
@@ -87,3 +88,10 @@ export type OptionalProps<T, K extends keyof T> = { [L in K]?: T[L] } & { [M in 
 export type ExtractPropertyNamesOfType<T, S> = {
   [K in keyof T]: T[K] extends S ? K : never
 }[keyof T];
+
+/**
+ * Dictionary
+ */
+export interface Dict<T> {
+  [k: string]: T | undefined;
+}
