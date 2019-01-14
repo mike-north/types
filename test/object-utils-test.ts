@@ -1,10 +1,9 @@
 import { suite, test } from 'qunit-decorators';
-import { OptionalProps, RequiredProps } from '../src';
+import { OptionalProps, RequiredProps, Dict } from '../src';
 
 @suite
 export class ObjectUtilsTest {
-
-  @test 'RequiredProps'(assert: Assert) {
+  @test 'RequiredProps tests'(assert: Assert) {
     interface A {
       a?: number;
       b?: string;
@@ -14,7 +13,7 @@ export class ObjectUtilsTest {
     x = { a: 22, b: 'foo' };
     assert.ok(x);
   }
-  @test 'OptionalProps'(assert: Assert) {
+  @test 'OptionalProps tests'(assert: Assert) {
     interface A {
       a: number;
       b: string;
@@ -23,5 +22,14 @@ export class ObjectUtilsTest {
     let x: Aoptional = { b: '51' };
     x = { a: 22, b: 'foo' };
     assert.ok(x);
+  }
+  @test 'Dict tests'(assert: Assert) {
+    interface A {
+      a: number;
+      b: string;
+    }
+    const aDict: Dict<A> = {};
+    aDict.foo = { a: 22, b: 'abc' };
+    assert.ok(aDict.foo);
   }
 }
