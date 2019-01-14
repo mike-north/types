@@ -1,5 +1,5 @@
 import { suite, test } from 'qunit-decorators';
-import { OptionalProps, RequiredProps, Dict } from '../src';
+import { Dict, OptionalProps, RequiredProps } from '../src';
 
 @suite
 export class ObjectUtilsTest {
