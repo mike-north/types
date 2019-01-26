@@ -31,7 +31,7 @@
     "@mike-north/js-lib-semantic-release-config": "1.0.1",
     "@semantic-release/changelog": "3.0.2",
     "@semantic-release/git": "7.0.8",
-    "@types/qunit": "2.5.3",
+    "@types/qunit": "2.5.4",
     "broccoli-typescript-compiler": "4.1.0",
     "ember-cli": "3.7.1",
     "libkit": "mike-north/libkit#ts-3",
