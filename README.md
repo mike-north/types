@@ -13,5 +13,7 @@ TypeScript `type`s, `interface`s and `class`es I often use.
 - **[`ExtractPropertyNamesOfType<T, S>`](https://github.com/mike-north/types/blob/master/src/object.ts)** - Create a string literal type, representing the names of all properties on a type T whose values are assignable to S
 - **[`RequiredProps<T, S>`](https://github.com/mike-north/types/blob/master/src/object.ts)** - Make properties whose names are assignable to S on object T required
 - **[`OptionalProps<T, S>`](https://github.com/mike-north/types/blob/master/src/object.ts)** - Make properties whose names are assignable to S on object T optional
+- **[`OptionalPropertyNamesOf<T>`](https://github.com/mike-north/types/blob/master/src/object.ts)** - Get the names of optional properties of T
+- **[`RequiredPropertyNamesOf<T>`](https://github.com/mike-north/types/blob/master/src/object.ts)** - Get the names of required properties of T
 
 (c) 2018 Mike North

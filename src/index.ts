@@ -2,7 +2,9 @@ export {
   Dict,
   ExtractPropertyNamesOfType,
   OptionalProps,
-  RequiredProps
+  RequiredProps,
+  OptionalPropertyNamesOf,
+  RequiredPropertyNamesOf
 } from './objects';
 export { Deferred } from './async';
 export { AsyncMethodReturns } from './functions';

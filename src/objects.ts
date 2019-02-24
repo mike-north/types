@@ -2,7 +2,7 @@
  * Given an object type, make one or more properties non-optional
  *
  * @example
- * ```ts
+ *
  *
  * interface Foo {
  *   a?: string;
@@ -15,7 +15,6 @@
  *   b: true              // now required
  *   c: [1, 2, 3]         // still optional
  * };
- * ```
  */
 export type RequiredProps<T, K extends keyof T> = T & { [L in K]-?: T[K] };
 
@@ -23,7 +22,6 @@ export type RequiredProps<T, K extends keyof T> = T & { [L in K]-?: T[K] };
  * Given an object type, make one or more properties optional
  *
  * @example
- * ```ts
  *
  * interface Foo {
  *   a: string;
@@ -36,7 +34,7 @@ export type RequiredProps<T, K extends keyof T> = T & { [L in K]-?: T[K] };
  *   b: true            // still required
  *   c: [1, 2, 3]       // now optional
  * };
- * ```
+ *
  */
 export type OptionalProps<T, K extends keyof T> = { [L in K]?: T[L] } &
   { [M in Exclude<keyof T, K>]: T[M] };
@@ -45,7 +43,6 @@ export type OptionalProps<T, K extends keyof T> = { [L in K]?: T[L] } &
  * Given an object type T, return a type of property names whose values are assignable to type S
  *
  * @example
- * ```ts
  *
  * interface Foo {
  *   a: string;
@@ -62,12 +59,11 @@ export type OptionalProps<T, K extends keyof T> = { [L in K]?: T[L] } &
  *
  * const notArrayProps: Exclude<keyof Foo, ExtractPropertyNamesOfType<Foo, any[]>> // type: 'a' | 'b'
  *   = 'a';
- * ```
  *
- * This can be very useful when used in combination with TypeScript's `Pick<T>` utility type
+ *
  *
  * @example
- * ```ts
+ *  // This can be very useful when used in combination with TypeScript's `Pick<T>` utility type
  *
  * interface Foo {
  *   a: string;
@@ -83,7 +79,7 @@ export type OptionalProps<T, K extends keyof T> = { [L in K]?: T[L] } &
  * // Get a type with only Foo's methods
  * let fooMethods: Pick<Foo, ExtractPropertyNamesOfType<Foo, (...args: any[]) => any>>
  *   = { b() { return true; } };
- * ```
+ *
  */
 export type ExtractPropertyNamesOfType<T, S> = {
   [K in keyof T]: T[K] extends S ? K : never
@@ -95,3 +91,28 @@ export type ExtractPropertyNamesOfType<T, S> = {
 export interface Dict<T> {
   [k: string]: T | undefined;
 }
+
+/**
+ * Extract the property names of an object type that are optional
+ *
+ * @example
+ *
+ * const x: OptionalPropertyOf<{ a: string; b?: number }>; // 'b'
+ *
+ */
+export type OptionalPropertyNamesOf<T extends object> = Exclude<
+  { [K in keyof T]: T extends Record<K, T[K]> ? never : K }[keyof T],
+  undefined
+>;
+
+/**
+ * Extract the property names of an object type that are required
+ *
+ * @example
+ *
+ * const y: RequiredPropertyOf<{ a: string; b?: number }>; // 'a'
+ */
+export type RequiredPropertyNamesOf<T extends object> = Exclude<
+  { [K in keyof T]: T extends Record<K, T[K]> ? K : never }[keyof T],
+  undefined
+>;
