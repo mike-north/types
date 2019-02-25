@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/mike-north/types/compare/v1.1.0...v1.2.0) (2019-02-25)
+
+
+### Features
+
+* **object:** optional and required property name extraction ([0e5dc1b](https://github.com/mike-north/types/commit/0e5dc1b))
+
 # [1.1.0](https://github.com/mike-north/types/compare/v1.0.7...v1.1.0) (2019-01-14)
 
 
