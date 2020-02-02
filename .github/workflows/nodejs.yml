@@ -37,7 +37,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [10.x, 13.x]
+        node-version: [8.11.3, 8.x, 10.x, 13.x]
 
     steps:
       - uses: actions/checkout@v2
@@ -113,7 +113,7 @@ jobs:
     strategy:
       matrix:
         node-version: [12.x]
-    name: node LTS tests
+    name: node tests
     needs: [build_12]
     runs-on: ubuntu-latest
     steps:
@@ -127,7 +127,7 @@ jobs:
   compat_test:
     strategy:
       matrix:
-        node-version: [10.x, 13.x]
+        node-version: [8.11.3, 8.x, 10.x, 13.x]
     name: node tests
     needs:
       [build, commit_lint, lint, basic_test, updated_docs, updated_api_report]
