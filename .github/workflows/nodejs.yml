@@ -31,7 +31,7 @@ jobs:
           path: ../sync
   build:
     runs-on: ubuntu-latest
-    needs: [build_12,lint]
+    needs: [build_12, lint]
 
     strategy:
       matrix:
@@ -43,9 +43,9 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+      - run: yarn --ignore-optional
+      - run: yarn build
       - run: |
-          yarn --ignore-optional
-          yarn build
           mkdir ../sync
           tar -cf ../sync/build.tar ./*
       - name: Upload build
