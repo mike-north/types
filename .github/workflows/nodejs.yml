@@ -7,6 +7,7 @@ env:
 
 jobs:
   build_12:
+    name: build
     runs-on: ubuntu-latest
 
     strategy:
@@ -30,6 +31,7 @@ jobs:
           name: build_${{ matrix.node-version }}
           path: ../sync
   build:
+    name: build
     runs-on: ubuntu-latest
     needs: [build_12, lint]
 
@@ -54,15 +56,19 @@ jobs:
           name: build_${{ matrix.node-version }}
           path: ../sync
   commit_lint:
-    name: lint
+    name: CommitLint
     needs: build_12
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       - name: Commit Linter
         uses: wagoid/commitlint-github-action@v1.4.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   lint:
-    name: lint
+    name: ESLint
     needs: build_12
     runs-on: ubuntu-latest
     steps:
@@ -123,7 +129,8 @@ jobs:
       matrix:
         node-version: [10.x, 13.x]
     name: node tests
-    needs: [build, commit_lint, lint, basic_test, updated_docs, updated_api_report]
+    needs:
+      [build, commit_lint, lint, basic_test, updated_docs, updated_api_report]
     runs-on: ubuntu-latest
     steps:
       - name: Download build
