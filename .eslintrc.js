@@ -37,6 +37,7 @@ module.exports = {
       rules: {
         '@typescript-eslint/explicit-function-return-type': 0,
         '@typescript-eslint/explicit-member-accessibility': 0,
+        'import/no-unresolved': 0,
         '@typescript-eslint/no-misused-promises': 0
       }
     },

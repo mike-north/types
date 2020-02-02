@@ -5,7 +5,11 @@
     "outDir": "../.test-js",
     "strict": true,
     "types": ["qunit"],
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "baseUrl": ".",
+    "paths": {
+      "@mike-north/types": [".."]
+    }
   },
   "references": [{ "path": ".." }],
   "include": ["."]

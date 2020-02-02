@@ -9,7 +9,7 @@
     "prepublishOnly": "yarn clean && yarn build",
     "preversion": "yarn test",
     "clean": "scripty",
-    "lint": "./node_modules/.bin/eslint --ext .ts .",
+    "lint": "yarn eslint -c ./.eslintrc.js --ext .ts src test type-tests",
     "pretest": "scripty",
     "test": "scripty",
     "build": "SCRIPTY_PARALLEL=true scripty",
