@@ -1,0 +1,128 @@
+name: Node.js CI
+
+on: [push, pull_request]
+
+env:
+  CI: true
+
+jobs:
+  build_12:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: |
+          yarn --ignore-optional
+          yarn build
+          mkdir ../sync
+          tar -cf ../sync/build.tar ./*
+      - name: Upload build
+        uses: actions/upload-artifact@v1
+        with:
+          name: build_${{ matrix.node-version }}
+          path: ../sync
+  build:
+    runs-on: ubuntu-latest
+    needs: [build_12,lint]
+
+    strategy:
+      matrix:
+        node-version: [8.11.3, 8.x, 10.x, 13.x]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: |
+          yarn --ignore-optional
+          yarn build
+          mkdir ../sync
+          tar -cf ../sync/build.tar ./*
+      - name: Upload build
+        uses: actions/upload-artifact@v1
+        with:
+          name: build_${{ matrix.node-version }}
+          path: ../sync
+  lint:
+    name: lint
+    needs: build_12
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download build
+        uses: actions/download-artifact@v1
+        with:
+          name: build_12.x
+          path: ../sync
+      - run: |
+          tar -xf ../sync/build.tar .
+          yarn lint
+  updated_api_report:
+    name: API Report up-to-date
+    needs: build_12
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Download build
+        uses: actions/download-artifact@v1
+        with:
+          name: build_12.x
+          path: ../sync
+      - run: tar -xf ../sync/build.tar .
+      - run: |
+          echo "API reports that are out of date: " && git diff --exit-code --name-only HEAD 'packages/*/etc/*.md' && echo "NONE: this PR is ready for review\!"
+      - run: git diff -s --exit-code HEAD -- 'packages/*/etc/*.md'
+  updated_docs:
+    name: Docs up-to-date
+    needs: build_12
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Download build
+        uses: actions/download-artifact@v1
+        with:
+          name: build_12.x
+          path: ../sync
+      - run: tar -xf ../sync/build.tar .
+      - run: |
+          echo "Documentation files that are out of date: " && git diff --exit-code --name-only HEAD 'docs/**/*.md' && echo "NONE: this PR is ready for review\!"
+      - run: git diff -s --exit-code HEAD -- 'docs/**/*.md'
+  basic_test:
+    strategy:
+      matrix:
+        node-version: [12.x]
+    name: node LTS tests
+    needs: [build_12]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download build
+        uses: actions/download-artifact@v1
+        with:
+          name: build_${{ matrix.node-version }}
+          path: ../sync
+      - run: tar -xf ../sync/build.tar .
+      - run: yarn test
+  compat_test:
+    strategy:
+      matrix:
+        node-version: [8.11.3, 8.x, 10.x, 13.x]
+    name: node tests
+    needs: [build, lint, basic_test, updated_docs, updated_api_report]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download build
+        uses: actions/download-artifact@v1
+        with:
+          name: build_${{ matrix.node-version }}
+          path: ../sync
+      - run: tar -xf ../sync/build.tar .
+      - run: yarn test
