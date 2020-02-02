@@ -3,8 +3,8 @@ import { suite, test } from 'qunit-decorators';
 
 @suite
 export class DeferredTests {
-  @test 'Constructor does not error'(assert: Assert) {
-    let d = new Deferred<number>();
+  @test public 'Constructor does not error'(assert: Assert) {
+    const d = new Deferred<number>();
     assert.ok(d, 'instance is defined');
     assert.equal(
       typeof d.resolve,
@@ -18,11 +18,11 @@ export class DeferredTests {
       'promise property looks like a promise'
     );
   }
-  @test async 'promise resolves when Deferred#resolve() is called'(
+  @test public async 'promise resolves when Deferred#resolve() is called'(
     assert: Assert
-  ) {
+  ): void {
     assert.expect(2);
-    let d = new Deferred<number>();
+    const d = new Deferred<number>();
     setTimeout(() => {
       d.resolve(42);
       assert.ok(true);
@@ -30,11 +30,11 @@ export class DeferredTests {
     const val = await d.promise;
     assert.equal(val, 42, 'value is correct');
   }
-  @test async 'promise rejects when Deferred#reject() is called'(
+  @test public async 'promise rejects when Deferred#reject() is called'(
     assert: Assert
-  ) {
+  ): void {
     assert.expect(3);
-    let d = new Deferred<number>();
+    const d = new Deferred<number>();
     setTimeout(() => {
       assert.ok(true);
       d.reject(-42);

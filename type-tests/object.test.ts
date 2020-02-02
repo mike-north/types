@@ -1,4 +1,4 @@
-import { DeepPartial } from '@mike-north/types';
+import { DeepPartial } from '..';
 
 function makeDeepPartial<T>(arg: T): DeepPartial<T> {
   return {} as any;

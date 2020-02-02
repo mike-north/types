@@ -1,2 +1,2 @@
-// TypeScript Version: 3.0
+// TypeScript Version: 2.8
 export * from '..';

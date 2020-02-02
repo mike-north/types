@@ -1,2 +1,2 @@
 #!/bin/bash
-yarn tsc -p test
+yarn lint && yarn tsc -p test

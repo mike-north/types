@@ -9,7 +9,7 @@ import {
 
 @suite
 export class ObjectUtilsTest {
-  @test 'RequiredProps tests'(assert: Assert) {
+  @test public RequiredProps(assert: Assert): void {
     interface A {
       a?: number;
       b?: string;
@@ -19,7 +19,7 @@ export class ObjectUtilsTest {
     x = { a: 22, b: 'foo' };
     assert.ok(x);
   }
-  @test 'OptionalProps tests'(assert: Assert) {
+  @test public OptionalProps(assert: Assert): void {
     interface A {
       a: number;
       b: string;
