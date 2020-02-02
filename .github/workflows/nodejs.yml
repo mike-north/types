@@ -53,6 +53,14 @@ jobs:
         with:
           name: build_${{ matrix.node-version }}
           path: ../sync
+  commit_lint:
+    name: lint
+    needs: build_12
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Commit Linter
+        uses: wagoid/commitlint-github-action@v1.4.0
   lint:
     name: lint
     needs: build_12
@@ -115,7 +123,7 @@ jobs:
       matrix:
         node-version: [8.11.3, 8.x, 10.x, 13.x]
     name: node tests
-    needs: [build, lint, basic_test, updated_docs, updated_api_report]
+    needs: [build, commit_lint, lint, basic_test, updated_docs, updated_api_report]
     runs-on: ubuntu-latest
     steps:
       - name: Download build
