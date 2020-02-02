@@ -1,3 +1,11 @@
+## [1.2.1](https://github.com/mike-north/types/compare/v1.2.0...v1.2.1) (2020-02-02)
+
+
+### Bug Fixes
+
+* build and test infrastructure refactor ([4c71370](https://github.com/mike-north/types/commit/4c713706ee8fdc81630e018f21a0dcdf160e5ba9))
+* fixes to linting and type extraction ([cd2af5b](https://github.com/mike-north/types/commit/cd2af5bf5533d5697c4edfd030c24be6c6a74a48))
+
 # [1.2.0](https://github.com/mike-north/types/compare/v1.1.0...v1.2.0) (2019-02-25)
 
 
