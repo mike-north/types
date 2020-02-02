@@ -4,48 +4,46 @@
  *
  * @public
  * @example
+ * ```ts
+ * // The Deferred represents some work to be done
+ * const d = new Deferred<number>();
  *
- *   ```ts
- *   // The Deferred represents some work to be done
- *   const d = new Deferred<number>();
+ * // in this case, we're accumulating timestamps
+ * const timestamps: Date[] = [];
  *
- *   // in this case, we're accumulating timestamps
- *   const timestamps: Date[] = [];
+ * // ever
+ * const task = setInterval(() => {
+ *   timestamps.push(new Date());
+ * }, 100);
  *
- *   // ever
- *   const task = setInterval(() => {
- *     timestamps.push(new Date());
- *   }, 100);
- *
- *   d.promise.then(val => {
- *    console.log('work is complete!', val)
- *   });
- *   ```
+ * d.promise.then(val => {
+ *  console.log('work is complete!', val)
+ * });
+ * ```
  */
 export class Deferred<T = any> {
   /**
    * The promise constructor to use when instantiating Deferreds.
-   * @default Promise
    */
-  static promiseConstructor: PromiseConstructor = Promise;
+  public static promiseConstructor: PromiseConstructor = Promise;
   /**
    * The eventual value that the Deferred's work will eventually calculate;
    */
-  readonly promise!: PromiseLike<T>;
+  public readonly promise!: PromiseLike<T>;
   /**
    * Indiate the successful completion of whatever work this Deferred represents
    *
-   * @param value the value that this Deferred's promise will resolve to
+   * @param value - the value that this Deferred's promise will resolve to
    *
    */
-  readonly resolve!: (value?: T | PromiseLike<T> | undefined) => void;
+  public readonly resolve!: (value?: T | PromiseLike<T>) => void;
   /**
    * Indicate the unsuccessful completion (i.e., an error) of whatever work this Deferred represents
    *
-   * @param reason information about the reason for failure
+   * @param reason - information about the reason for failure
    */
-  readonly reject!: (reason?: any) => any;
-  constructor() {
+  public readonly reject!: (reason?: any) => any;
+  public constructor() {
     (this as any).promise = new Deferred.promiseConstructor((res, rej) => {
       (this as any).resolve = res;
       (this as any).reject = rej;

@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "module": "CommonJS",
+    "target": "ES2017",
+    "outDir": "../.test-js",
+    "strict": true,
+    "types": ["qunit"],
+    "experimentalDecorators": true,
+    "baseUrl": ".",
+    "paths": {
+      "@mike-north/types": [".."]
+    }
+  },
+  "references": [{ "path": ".." }],
+  "include": ["."]
+}

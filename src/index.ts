@@ -4,7 +4,8 @@ export {
   OptionalProps,
   RequiredProps,
   OptionalPropertyNamesOf,
-  RequiredPropertyNamesOf
+  RequiredPropertyNamesOf,
+  DeepPartial
 } from './objects';
 export { Deferred } from './async';
 export { AsyncMethodReturns } from './functions';

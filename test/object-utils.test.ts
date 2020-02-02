@@ -5,11 +5,11 @@ import {
   OptionalProps,
   RequiredPropertyNamesOf,
   RequiredProps
-} from '../src';
+} from '..';
 
 @suite
 export class ObjectUtilsTest {
-  @test 'RequiredProps tests'(assert: Assert) {
+  @test public RequiredProps(assert: Assert): void {
     interface A {
       a?: number;
       b?: string;
@@ -19,7 +19,7 @@ export class ObjectUtilsTest {
     x = { a: 22, b: 'foo' };
     assert.ok(x);
   }
-  @test 'OptionalProps tests'(assert: Assert) {
+  @test public OptionalProps(assert: Assert): void {
     interface A {
       a: number;
       b: string;
@@ -40,16 +40,16 @@ export class ObjectUtilsTest {
   }
 
   @test 'OptionalPropertyNamesOf tests'(assert: Assert) {
-    let x: OptionalPropertyNamesOf<{ a: string; b?: number }> = 'b';
-    // tslint:disable-next-line: no-empty
+    const x: OptionalPropertyNamesOf<{ a: string; b?: number }> = 'b';
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
     function foo(_arg: 'b') {}
     foo(x);
     assert.ok(x);
   }
 
   @test 'RequiredPropertyNamesOf tests'(assert: Assert) {
-    let y: RequiredPropertyNamesOf<{ a: string; b?: number }> = 'a';
-    // tslint:disable-next-line: no-empty
+    const y: RequiredPropertyNamesOf<{ a: string; b?: number }> = 'a';
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
     function foo(_arg: 'a') {}
     foo(y);
     assert.ok(y);

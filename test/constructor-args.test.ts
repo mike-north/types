@@ -1,11 +1,11 @@
 import { suite, test } from 'qunit-decorators';
-import { ConstructorArgs } from './index';
+import { ConstructorArgs } from '..';
 
 @suite
 export class ConstructorArgsTests {
   @test 'zero-argument constructor case'(assert: Assert) {
     class C {
-      // tslint:disable-next-line:no-empty
+      // eslint-disable-next-line @typescript-eslint/no-empty-function
       constructor() {}
     }
     const x: ConstructorArgs<typeof C> = [];
@@ -15,7 +15,7 @@ export class ConstructorArgsTests {
   }
   @test 'one-argument constructor case'(assert: Assert) {
     class C {
-      // tslint:disable-next-line:no-empty
+      // eslint-disable-next-line @typescript-eslint/no-empty-function
       constructor(_a: string) {}
     }
     const x: ConstructorArgs<typeof C> = ['hello'];
@@ -25,7 +25,7 @@ export class ConstructorArgsTests {
   }
   @test 'multi-argument constructor case'(assert: Assert) {
     class C {
-      // tslint:disable-next-line:no-empty
+      // eslint-disable-next-line @typescript-eslint/no-empty-function
       constructor(_a: string, _b: number[], _c: boolean) {}
     }
     const x: ConstructorArgs<typeof C> = ['hello', [42, 42], true];
