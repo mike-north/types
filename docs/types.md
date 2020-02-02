@@ -10,15 +10,22 @@
 |  --- | --- |
 |  [Deferred](./types.deferred.md) | A deferred represents some asynchronous work that is not yet finished, which may or may not culminate in a value. |
 
+## Interfaces
+
+|  Interface | Description |
+|  --- | --- |
+|  [Dict](./types.dict.md) | Dictionary |
+
 ## Type Aliases
 
 |  Type Alias | Description |
 |  --- | --- |
 |  [AsyncMethodReturns](./types.asyncmethodreturns.md) | Given a type of object with methods, make some (or all) of the return values "async" (i.e., returning a <code>string</code> becomes returning a <code>Promise&lt;string&gt;</code>).<!-- -->All non-function properties are excluded from the resultant type |
 |  [ConstructorArgs](./types.constructorargs.md) | Extract the arguments from a class constructor |
-|  [DeepPartial](./types.deeppartial.md) | Recursively make all properties optional |
-|  [ExtractArgs](./types.extractargs.md) | Extract the arguments from a function type, and emit them as a tuple |
+|  [DeepPartial](./types.deeppartial.md) |  |
 |  [ExtractPropertyNamesOfType](./types.extractpropertynamesoftype.md) | Given an object type T, return a type of property names whose values are assignable to type S |
+|  [OptionalPropertyNamesOf](./types.optionalpropertynamesof.md) | Extract the property names of an object type that are optional |
 |  [OptionalProps](./types.optionalprops.md) | Given an object type, make one or more properties optional |
+|  [RequiredPropertyNamesOf](./types.requiredpropertynamesof.md) | Extract the property names of an object type that are required |
 |  [RequiredProps](./types.requiredprops.md) | Given an object type, make one or more properties non-optional |
 

@@ -10,23 +10,9 @@ export type AsyncMethodReturns<T, K extends keyof T = keyof T> = {
 };
 
 // @public
-export type ConstructorArgs<K extends {
-    new (...args: any[]): any;
-}> = K extends {
-    new (): any;
-} ? never[] : K extends {
-    new (a: infer A): any;
-} ? [A] : K extends {
-    new (a: infer A, b: infer B): any;
-} ? [A, B] : K extends {
-    new (a: infer A, b: infer B, c: infer C): any;
-} ? [A, B, C] : K extends {
-    new (a: infer A, b: infer B, c: infer C, d: infer D): any;
-} ? [A, B, C, D] : K extends {
-    new (a: infer A, b: infer B, c: infer C, d: infer D, e: infer E): any;
-} ? [A, B, C, D, E] : never;
+export type ConstructorArgs<K extends new (...args: any[]) => any> = K extends new () => any ? never[] : K extends new (a: infer A) => any ? [A] : K extends new (a: infer A, b: infer B) => any ? [A, B] : K extends new (a: infer A, b: infer B, c: infer C) => any ? [A, B, C] : K extends new (a: infer A, b: infer B, c: infer C, d: infer D) => any ? [A, B, C, D] : K extends new (a: infer A, b: infer B, c: infer C, d: infer D, e: infer E) => any ? [A, B, C, D, E] : never;
 
-// @public
+// @public @deprecated (undocumented)
 export type DeepPartial<O> = O extends string | Function | number | boolean ? O : {
     [K in keyof O]?: DeepPartial<O[K]>;
 };
@@ -41,7 +27,10 @@ export class Deferred<T = any> {
 }
 
 // @public
-export type ExtractArgs<F> = F extends (a: infer A) => any ? [A] : F extends (a: infer A, b: infer B) => any ? [A, B] : F extends (a: infer A, b: infer B, c: infer C) => any ? [A, B, C] : F extends (a: infer A, b: infer B, c: infer C, d: infer D) => any ? [A, B, C, D] : F extends (a: infer A, b: infer B, c: infer C, d: infer D, e: infer E) => any ? [A, B, C, D, E] : never;
+export interface Dict<T> {
+    // (undocumented)
+    [k: string]: T | undefined;
+}
 
 // @public
 export type ExtractPropertyNamesOfType<T, S> = {
@@ -49,11 +38,21 @@ export type ExtractPropertyNamesOfType<T, S> = {
 }[keyof T];
 
 // @public
+export type OptionalPropertyNamesOf<T extends object> = Exclude<{
+    [K in keyof T]: T extends Record<K, T[K]> ? never : K;
+}[keyof T], undefined>;
+
+// @public
 export type OptionalProps<T, K extends keyof T> = {
     [L in K]?: T[L];
 } & {
     [M in Exclude<keyof T, K>]: T[M];
 };
+
+// @public
+export type RequiredPropertyNamesOf<T extends object> = Exclude<{
+    [K in keyof T]: T extends Record<K, T[K]> ? K : never;
+}[keyof T], undefined>;
 
 // @public
 export type RequiredProps<T, K extends keyof T> = T & {

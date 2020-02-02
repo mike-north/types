@@ -4,7 +4,10 @@
 
 ## DeepPartial type
 
-Recursively make all properties optional
+> Warning: This API is now obsolete.
+> 
+> Use of this type is not recommended
+> 
 
 <b>Signature:</b>
 

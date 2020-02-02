@@ -18,7 +18,6 @@ export declare type ExtractPropertyNamesOfType<T, S> = {
 
 
 ```ts
-
 interface Foo {
   a: string;
   b: boolean;
@@ -36,13 +35,12 @@ const notArrayProps: Exclude<keyof Foo, ExtractPropertyNamesOfType<Foo, any[]>> 
   = 'a';
 
 ```
-This can be very useful when used in combination with TypeScript's `Pick<T>` utility type
 
 ## Example 2
 
+This can be very useful when used in combination with TypeScript's `Pick<T>` utility type
 
 ```ts
-
 interface Foo {
   a: string;
   b(): boolean;

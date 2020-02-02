@@ -20,7 +20,7 @@ export class DeferredTests {
   }
   @test public async 'promise resolves when Deferred#resolve() is called'(
     assert: Assert
-  ): void {
+  ) {
     assert.expect(2);
     const d = new Deferred<number>();
     setTimeout(() => {
@@ -32,7 +32,7 @@ export class DeferredTests {
   }
   @test public async 'promise rejects when Deferred#reject() is called'(
     assert: Assert
-  ): void {
+  ) {
     assert.expect(3);
     const d = new Deferred<number>();
     setTimeout(() => {

@@ -1,4 +1,5 @@
-import { DeepPartial } from '..';
+// eslint-disable-next-line import/no-unresolved
+import { DeepPartial } from '@mike-north/types';
 
 function makeDeepPartial<T>(arg: T): DeepPartial<T> {
   return {} as any;

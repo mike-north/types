@@ -18,7 +18,6 @@ export declare type RequiredProps<T, K extends keyof T> = T & {
 
 
 ```ts
-
 interface Foo {
   a?: string;
   b?: boolean;

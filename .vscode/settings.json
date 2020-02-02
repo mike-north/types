@@ -7,5 +7,6 @@
   "typescript.tsdk": "node_modules/typescript/lib",
   "files.associations": {
     "*.json": "jsonc"
-  }
+  },
+  "eslint.enable": true
 }

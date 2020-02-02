@@ -20,7 +20,6 @@ export declare type OptionalProps<T, K extends keyof T> = {
 
 
 ```ts
-
 interface Foo {
   a: string;
   b: boolean;
