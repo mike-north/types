@@ -1,10 +1,9 @@
 /**
  * Extract the arguments from a class constructor
  *
+ * @public
  * @example
- *
  * ```ts
- *
  * class Foo {
  *  constructor(a: string, b: number[], c: Promise<boolean>) {}
  * }

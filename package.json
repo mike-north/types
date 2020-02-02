@@ -4,43 +4,41 @@
   "description": "TypeScript types/interfaces I often use for small libraries",
   "main": "dist/commonjs/src/index.js",
   "module": "dist/modules/src/index.js",
-  "types": "dist/types/src/index.d.ts",
-  "ember-addon": {
-    "main": "ember-addon.js"
-  },
-  "keywords": [
-    "ember-addon"
-  ],
+  "typings": "dist/types/types.d.ts",
   "scripts": {
-    "problems": "node ./scripts/problems.js",
-    "preversion": "npm run test",
-    "prepare": "ember build -prod",
-    "build": "ember build -prod",
-    "build-tests": "ember build",
-    "pretest": "npm run problems",
-    "test": "ember test",
-    "tdd": "ember test --server",
+    "prepublishOnly": "yarn clean && yarn build",
+    "preversion": "yarn test",
+    "clean": "scripty",
+    "pretest": "scripty",
+    "test": "scripty",
+    "build": "SCRIPTY_PARALLEL=true scripty",
+    "travis-deploy-once": "travis-deploy-once",
     "semantic-release": "semantic-release"
   },
   "license": "MIT",
   "devDependencies": {
-    "@commitlint/cli": "8.3.5",
-    "@commitlint/config-conventional": "8.3.4",
-    "@commitlint/travis-cli": "8.3.5",
-    "@mike-north/js-lib-renovate-config": "1.3.1",
-    "@mike-north/js-lib-semantic-release-config": "1.0.1",
-    "@semantic-release/changelog": "3.0.6",
-    "@semantic-release/git": "7.0.18",
-    "@types/qunit": "2.5.4",
-    "broccoli-typescript-compiler": "4.2.0",
-    "ember-cli": "3.8.1",
-    "libkit": "mike-north/libkit#ts-3",
-    "qunit": "2.9.3",
-    "qunit-decorators": "1.1.5",
-    "semantic-release": "15.14.0",
+    "typescript": "3.5.1",
+    "travis-deploy-once": "^5.0.1",
     "shelljs": "0.8.3",
-    "tslint": "5.17.0",
-    "typescript": "3.5.1"
+    "semantic-release": "15.14.0",
+    "scripty": "^1.9.1",
+    "rimraf": "^3.0.1",
+    "qunit": "^2.9.3",
+    "qunit-decorators": "^1.1.5",
+    "libkit": "mike-north/libkit#ts-3",
+    "ember-cli": "3.8.1",
+    "dtslint": "^1.0.2",
+    "broccoli-typescript-compiler": "4.2.0",
+    "@types/qunit": "^2.9.0",
+    "@semantic-release/git": "^7.0.1",
+    "@semantic-release/changelog": "^3.0.0",
+    "@mike-north/js-lib-semantic-release-config": "1.0.1",
+    "@mike-north/js-lib-renovate-config": "1.3.1",
+    "@microsoft/api-extractor": "^7.7.8",
+    "@microsoft/api-documenter": "^7.7.12",
+    "@commitlint/travis-cli": "8.3.5",
+    "@commitlint/config-conventional": "8.3.4",
+    "@commitlint/cli": "8.3.5"
   },
   "repository": {
     "type": "git",
@@ -62,5 +60,9 @@
   },
   "release": {
     "extends": "@mike-north/js-lib-semantic-release-config"
+  },
+  "volta": {
+    "node": "10.18.1",
+    "yarn": "1.21.1"
   }
 }

@@ -1,5 +1,5 @@
 import { suite, test } from 'qunit-decorators';
-import { ConstructorArgs } from './index';
+import { ConstructorArgs } from '..';
 
 @suite
 export class ConstructorArgsTests {

@@ -1,9 +1,10 @@
 /**
  * Given a type of object with methods, make some (or all) of the return values
- * "async" (i.e., returning a @pre{string} becomes returning a @pre{Promise<string>}).
+ * "async" (i.e., returning a `string` becomes returning a `Promise<string>`).
  *
  * All non-function properties are excluded from the resultant type
  *
+ * @public
  * @example
  * ```ts
  *

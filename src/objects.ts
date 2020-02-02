@@ -1,6 +1,7 @@
 /**
  * Given an object type, make one or more properties non-optional
  *
+ * @public
  * @example
  *
  *
@@ -21,6 +22,7 @@ export type RequiredProps<T, K extends keyof T> = T & { [L in K]-?: T[K] };
 /**
  * Given an object type, make one or more properties optional
  *
+ * @public
  * @example
  *
  * interface Foo {
@@ -42,6 +44,7 @@ export type OptionalProps<T, K extends keyof T> = { [L in K]?: T[L] } &
 /**
  * Given an object type T, return a type of property names whose values are assignable to type S
  *
+ * @public
  * @example
  *
  * interface Foo {
@@ -82,7 +85,7 @@ export type OptionalProps<T, K extends keyof T> = { [L in K]?: T[L] } &
  *
  */
 export type ExtractPropertyNamesOfType<T, S> = {
-  [K in keyof T]: T[K] extends S ? K : never
+  [K in keyof T]: T[K] extends S ? K : never;
 }[keyof T];
 
 /**
