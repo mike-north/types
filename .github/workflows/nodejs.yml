@@ -58,15 +58,12 @@ jobs:
     needs: build_12
     runs-on: ubuntu-latest
     steps:
-      - run: ls -all
       - name: Download build
         uses: actions/download-artifact@v1
         with:
           name: build_12.x
           path: ../sync
-      - run: ls -all
       - run: tar -xf ../sync/build.tar .
-      - run: ls -all
       - run: yarn lint
   updated_api_report:
     name: API Report up-to-date

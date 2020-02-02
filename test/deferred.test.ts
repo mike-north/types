@@ -1,4 +1,4 @@
-import { Deferred } from '@mike-north/types';
+import { Deferred } from '..';
 import { suite, test } from 'qunit-decorators';
 
 @suite
