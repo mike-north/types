@@ -51,6 +51,7 @@ module.exports = {
         node: true
       },
       rules: {
+        'prefer-const': 0,
         '@typescript-eslint/no-misused-promises': 0
       }
     }

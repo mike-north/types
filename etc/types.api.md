@@ -32,6 +32,9 @@ export interface Dict<T> {
     [k: string]: T | undefined;
 }
 
+// @beta
+export type ExtractArgs<F> = F extends (a: infer A) => any ? [A] : F extends (a: infer A, b: infer B) => any ? [A, B] : F extends (a: infer A, b: infer B, c: infer C) => any ? [A, B, C] : F extends (a: infer A, b: infer B, c: infer C, d: infer D) => any ? [A, B, C, D] : F extends (a: infer A, b: infer B, c: infer C, d: infer D, e: infer E) => any ? [A, B, C, D, E] : never;
+
 // @public
 export type ExtractPropertyNamesOfType<T, S> = {
     [K in keyof T]: T[K] extends S ? K : never;
