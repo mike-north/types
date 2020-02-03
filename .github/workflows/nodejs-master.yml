@@ -143,25 +143,25 @@ jobs:
           path: ../sync
       - run: tar -xf ../sync/build.tar .
       - run: yarn test
-  release:
-    name: Publish
-    runs-on: ubuntu-18.04
-    needs: [compat_test]
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v1
-      - name: Setup Node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: 12
-      - name: Install dependencies
-        run: yarn
-      - name: Build
-        run: yarn build
-      - name: Test
-        run: yarn test
-      - name: Release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npx semantic-release
+  # release:
+  #   name: Publish
+  #   runs-on: ubuntu-18.04
+  #   needs: [compat_test]
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v1
+  #     - name: Setup Node.js
+  #       uses: actions/setup-node@v1
+  #       with:
+  #         node-version: 12
+  #     - name: Install dependencies
+  #       run: yarn
+  #     - name: Build
+  #       run: yarn build
+  #     - name: Test
+  #       run: yarn test
+  #     - name: Release
+  #       env:
+  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  #         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+  #       run: npx semantic-release
