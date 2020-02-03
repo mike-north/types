@@ -1,6 +1,6 @@
 # @mike-north/types
 
-[![Build Status](https://travis-ci.org/mike-north/types.svg?branch=master)](https://travis-ci.org/mike-north/types)
+![Node.js CI (master)](https://github.com/mike-north/types/workflows/Node.js%20CI%20(master)/badge.svg)
 [![Version](https://img.shields.io/npm/v/@mike-north/types.svg)](https://www.npmjs.com/package/@mike-north/types)
 
 TypeScript `type`s, `interface`s and `class`es I often use.
