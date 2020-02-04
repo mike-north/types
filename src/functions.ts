@@ -31,7 +31,7 @@ export type AsyncMethodReturns<T, K extends keyof T = keyof T> = {
 
 /**
  * Extract the arguments from a function type, and emit them as a tuple
- * @beta
+ * @public
  *
  * @remarks
  * Supports up to five arguments, otherwise fails via emitting a `never`
@@ -43,20 +43,22 @@ export type AsyncMethodReturns<T, K extends keyof T = keyof T> = {
  * type FooFirstArg = FooArgs[0] // string
  * ```
  */
-export declare type ExtractArgs<F> = F extends (a: infer A) => any
-  ? [A]
-  : F extends (a: infer A, b: infer B) => any
-  ? [A, B]
-  : F extends (a: infer A, b: infer B, c: infer C) => any
-  ? [A, B, C]
+export declare type ExtractArgs<F> = F extends (
+  a: infer A,
+  b: infer B,
+  c: infer C,
+  d: infer D,
+  e: infer E
+) => any
+  ? [A, B, C, D, E]
   : F extends (a: infer A, b: infer B, c: infer C, d: infer D) => any
   ? [A, B, C, D]
-  : F extends (
-      a: infer A,
-      b: infer B,
-      c: infer C,
-      d: infer D,
-      e: infer E
-    ) => any
-  ? [A, B, C, D, E]
+  : F extends (a: infer A, b: infer B, c: infer C) => any
+  ? [A, B, C]
+  : F extends (a: infer A, b: infer B) => any
+  ? [A, B]
+  : F extends (a: infer A) => any
+  ? [A]
+  : F extends () => any
+  ? []
   : never;

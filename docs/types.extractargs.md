@@ -4,15 +4,12 @@
 
 ## ExtractArgs type
 
-> This API is provided as a preview for developers and may change based on feedback that we receive. Do not use this API in a production environment.
-> 
-
 Extract the arguments from a function type, and emit them as a tuple
 
 <b>Signature:</b>
 
 ```typescript
-export declare type ExtractArgs<F> = F extends (a: infer A) => any ? [A] : F extends (a: infer A, b: infer B) => any ? [A, B] : F extends (a: infer A, b: infer B, c: infer C) => any ? [A, B, C] : F extends (a: infer A, b: infer B, c: infer C, d: infer D) => any ? [A, B, C, D] : F extends (a: infer A, b: infer B, c: infer C, d: infer D, e: infer E) => any ? [A, B, C, D, E] : never;
+export declare type ExtractArgs<F> = F extends (a: infer A, b: infer B, c: infer C, d: infer D, e: infer E) => any ? [A, B, C, D, E] : F extends (a: infer A, b: infer B, c: infer C, d: infer D) => any ? [A, B, C, D] : F extends (a: infer A, b: infer B, c: infer C) => any ? [A, B, C] : F extends (a: infer A, b: infer B) => any ? [A, B] : F extends (a: infer A) => any ? [A] : F extends () => any ? [] : never;
 ```
 
 ## Remarks

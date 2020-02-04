@@ -23,7 +23,7 @@
 |  [AsyncMethodReturns](./types.asyncmethodreturns.md) | Given a type of object with methods, make some (or all) of the return values "async" (i.e., returning a <code>string</code> becomes returning a <code>Promise&lt;string&gt;</code>).<!-- -->All non-function properties are excluded from the resultant type |
 |  [ConstructorArgs](./types.constructorargs.md) | Extract the arguments from a class constructor |
 |  [DeepPartial](./types.deeppartial.md) |  |
-|  [ExtractArgs](./types.extractargs.md) | <b><i>(BETA)</i></b> Extract the arguments from a function type, and emit them as a tuple |
+|  [ExtractArgs](./types.extractargs.md) | Extract the arguments from a function type, and emit them as a tuple |
 |  [ExtractPropertyNamesOfType](./types.extractpropertynamesoftype.md) | Given an object type T, return a type of property names whose values are assignable to type S |
 |  [OptionalPropertyNamesOf](./types.optionalpropertynamesof.md) | Extract the property names of an object type that are optional |
 |  [OptionalProps](./types.optionalprops.md) | Given an object type, make one or more properties optional |
