@@ -23,7 +23,7 @@ Supports up to five arguments, otherwise fails via emitting a `never`
 
 
 ```ts
-function foo(a: string, b: number): void \{\}
+function foo(a: string, b: number): void { }
 type FooArgs = ExtractArgs<typeof foo>; // [string, number]
 type FooFirstArg = FooArgs[0] // string
 
