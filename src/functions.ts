@@ -28,3 +28,35 @@ export type AsyncMethodReturns<T, K extends keyof T = keyof T> = {
     ? (...args: A) => Promise<R>
     : T[KK];
 };
+
+/**
+ * Extract the arguments from a function type, and emit them as a tuple
+ * @beta
+ *
+ * @remarks
+ * Supports up to five arguments, otherwise fails via emitting a `never`
+ *
+ * @example
+ * ```ts
+ * function foo(a: string, b: number): void { }
+ * type FooArgs = ExtractArgs<typeof foo>; // [string, number]
+ * type FooFirstArg = FooArgs[0] // string
+ * ```
+ */
+export declare type ExtractArgs<F> = F extends (a: infer A) => any
+  ? [A]
+  : F extends (a: infer A, b: infer B) => any
+  ? [A, B]
+  : F extends (a: infer A, b: infer B, c: infer C) => any
+  ? [A, B, C]
+  : F extends (a: infer A, b: infer B, c: infer C, d: infer D) => any
+  ? [A, B, C, D]
+  : F extends (
+      a: infer A,
+      b: infer B,
+      c: infer C,
+      d: infer D,
+      e: infer E
+    ) => any
+  ? [A, B, C, D, E]
+  : never;

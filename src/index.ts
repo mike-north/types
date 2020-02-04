@@ -8,5 +8,5 @@ export {
   DeepPartial
 } from './objects';
 export { Deferred } from './async';
-export { AsyncMethodReturns } from './functions';
+export { AsyncMethodReturns, ExtractArgs } from './functions';
 export { ConstructorArgs } from './classes';
