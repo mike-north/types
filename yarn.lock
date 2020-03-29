@@ -162,10 +162,10 @@
     mkdirp "^0.5.1"
     rimraf "^2.5.2"
 
-"@microsoft/api-documenter@7.7.15":
-  version "7.7.15"
-  resolved "https://registry.yarnpkg.com/@microsoft/api-documenter/-/api-documenter-7.7.15.tgz#66f2c25af9fe1641f511a780f797dd18f7826cee"
-  integrity sha512-6W2vIlOp7G3+PdKczVYiEYyxxh/5FYFh/9Ft1pdcDiMUOUujRmgRlp4gp5La0sY3b9Y2g9RO4illgyNPw1F8kQ==
+"@microsoft/api-documenter@7.7.16":
+  version "7.7.16"
+  resolved "https://registry.yarnpkg.com/@microsoft/api-documenter/-/api-documenter-7.7.16.tgz#6e23fb233cbcd9ecdf36903accf607ed32f47a6b"
+  integrity sha512-1iuaNbfLCr8y56Dw3NHbeoJwGfKPwmJSBld0Ziw3ToY+B0BwcHPQxRL+LD460uwyeLcB6de5Sw/QXA2+RwGPSw==
   dependencies:
     "@microsoft/api-extractor-model" "7.7.10"
     "@microsoft/tsdoc" "0.12.19"
@@ -183,10 +183,10 @@
     "@microsoft/tsdoc" "0.12.19"
     "@rushstack/node-core-library" "3.19.6"
 
-"@microsoft/api-extractor@7.7.11":
-  version "7.7.11"
-  resolved "https://registry.yarnpkg.com/@microsoft/api-extractor/-/api-extractor-7.7.11.tgz#444f1bb23fda5ac7a7ecb46bfb4a8d8d643cbaa4"
-  integrity sha512-kd2kakdDoRgI54J5H11a76hyYZBMhtp4piwWAy4bYTwlQT0v/tp+G/UMMgjUL4vKf0kTNhitEUX/0LfQb1AHzQ==
+"@microsoft/api-extractor@7.7.12":
+  version "7.7.12"
+  resolved "https://registry.yarnpkg.com/@microsoft/api-extractor/-/api-extractor-7.7.12.tgz#1afc3fd9bc561d6962f2b7fe471a413bfdbe837c"
+  integrity sha512-RYMG/dIZs7VXWUgx8Cwk73Czlr9qMUMolxwStFKowy3yMluzHlAKB2srV6csoWlSms6J75tLq6z1c0LXZksWxg==
   dependencies:
     "@microsoft/api-extractor-model" "7.7.10"
     "@microsoft/tsdoc" "0.12.19"
