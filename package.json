@@ -18,8 +18,8 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@microsoft/api-documenter": "7.7.17",
-    "@microsoft/api-extractor": "7.7.12",
+    "@microsoft/api-documenter": "7.7.18",
+    "@microsoft/api-extractor": "7.7.13",
     "@types/qunit": "2.9.1",
     "@typescript-eslint/eslint-plugin": "2.25.0",
     "@typescript-eslint/parser": "2.25.0",
