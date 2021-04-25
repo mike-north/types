@@ -10,6 +10,14 @@
 |  --- | --- |
 |  [Deferred](./types.deferred.md) | A deferred represents some asynchronous work that is not yet finished, which may or may not culminate in a value. |
 
+## Functions
+
+|  Function | Description |
+|  --- | --- |
+|  [isDefined(arg)](./types.isdefined.md) | Test whether an argument is non-undefined |
+|  [isNonNull(arg)](./types.isnonnull.md) | Test whether an argument is non-null |
+|  [isPresent(arg)](./types.ispresent.md) | Test whether an argument is neither null, nor undefined |
+
 ## Interfaces
 
 |  Interface | Description |

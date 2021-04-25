@@ -27,7 +27,7 @@ export class Deferred<T = any> {
 }
 
 // @public
-export interface Dict<T> {
+export interface Dict<T = any> {
     // (undocumented)
     [k: string]: T | undefined;
 }
@@ -39,6 +39,15 @@ export type ExtractArgs<F> = F extends (a: infer A, b: infer B, c: infer C, d: i
 export type ExtractPropertyNamesOfType<T, S> = {
     [K in keyof T]: T[K] extends S ? K : never;
 }[keyof T];
+
+// @public
+export function isDefined<T>(arg: T | undefined): arg is T;
+
+// @public
+export function isNonNull<T>(arg: T | null): arg is T;
+
+// @public
+export function isPresent<T>(arg: T | null | undefined): arg is T;
 
 // @public
 export type OptionalPropertyNamesOf<T extends object> = Exclude<{

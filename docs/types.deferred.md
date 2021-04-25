@@ -43,8 +43,8 @@ d.promise.then(val => {
 
 |  Property | Modifiers | Type | Description |
 |  --- | --- | --- | --- |
-|  [promise](./types.deferred.promise.md) |  | <code>PromiseLike&lt;T&gt;</code> | The eventual value that the Deferred's work will eventually calculate; |
-|  [promiseConstructor](./types.deferred.promiseconstructor.md) | <code>static</code> | <code>PromiseConstructor</code> | The promise constructor to use when instantiating Deferreds. |
-|  [reject](./types.deferred.reject.md) |  | <code>(reason?: any) =&gt; any</code> | Indicate the unsuccessful completion (i.e., an error) of whatever work this Deferred represents |
-|  [resolve](./types.deferred.resolve.md) |  | <code>(value?: T &#124; PromiseLike&lt;T&gt;) =&gt; void</code> | Indiate the successful completion of whatever work this Deferred represents |
+|  [promise](./types.deferred.promise.md) |  | PromiseLike&lt;T&gt; | The eventual value that the Deferred's work will eventually calculate; |
+|  [promiseConstructor](./types.deferred.promiseconstructor.md) | <code>static</code> | PromiseConstructor | The promise constructor to use when instantiating Deferreds. |
+|  [reject](./types.deferred.reject.md) |  | (reason?: any) =&gt; any | Indicate the unsuccessful completion (i.e., an error) of whatever work this Deferred represents |
+|  [resolve](./types.deferred.resolve.md) |  | (value?: T \| PromiseLike&lt;T&gt;) =&gt; void | Indiate the successful completion of whatever work this Deferred represents |
 
