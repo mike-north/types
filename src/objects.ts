@@ -91,14 +91,6 @@ export type ExtractPropertyNamesOfType<T, S> = {
 }[keyof T];
 
 /**
- * Dictionary
- * @public
- */
-export interface Dict<T> {
-  [k: string]: T | undefined;
-}
-
-/**
  * Extract the property names of an object type that are optional
  * @public
  * @example

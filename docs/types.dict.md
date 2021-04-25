@@ -9,5 +9,5 @@ Dictionary
 <b>Signature:</b>
 
 ```typescript
-export interface Dict<T> 
+export interface Dict<T = any> 
 ```

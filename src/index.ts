@@ -1,5 +1,6 @@
+export { isDefined, isNonNull, isPresent } from './guards';
+export { Dict } from './dict';
 export {
-  Dict,
   ExtractPropertyNamesOfType,
   OptionalProps,
   RequiredProps,
